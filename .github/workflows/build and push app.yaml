@@ -23,17 +23,17 @@ on:
         default: 'adopt'
 jobs:
   code_analyze:
-      uses: kishore3github/github-actions/.github/workflows/code_scanning.yaml@main
-      with:
-          language: ${{ github.event.inputs.language }}
-          version: ${{ github.event.inputs.version }}
-          distribution: ${{ github.event.inputs.distribution }}
-        # language: 'java'
-        # version: '17'
-        # distribution: 'adopt'
-        
-      secrets:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    uses: kishore3github/github-actions/.github/workflows/code_scanning.yaml@main
+    with:
+      language: ${{ github.event.inputs.language }}
+      version: ${{ github.event.inputs.version }}
+      distribution: ${{ github.event.inputs.distribution }}
+      # language: 'java'
+      # version: '17'
+      # distribution: 'adopt'
+      
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   Build_and_push_image_to_dockerhub:
     needs: code_analyze
