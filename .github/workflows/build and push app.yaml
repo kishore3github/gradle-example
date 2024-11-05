@@ -7,6 +7,20 @@ on:
     paths-ignore:
       - 'examples/**'
 
+  workflow_dispatch:
+    inputs:
+      language:
+        description: 'Programming Language'
+        required: true
+        default: 'java'
+      version:
+        description: 'Java Version'
+        required: true
+        default: '17'
+      distribution:
+        description: 'Java Distribution'
+        required: true
+        default: 'adopt'
 jobs:
   code_analyze:
       uses: kishore3github/github-actions/.github/workflows/code_scanning.yaml@main
