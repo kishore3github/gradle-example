@@ -40,6 +40,9 @@ jobs:
     uses: kishore3github/github-actions/.github/workflows/java-ci.yaml@main
     with:
       repoName: ${{ github.repository }}
+      language: ${{ github.event.inputs.language }}
+      version: ${{ github.event.inputs.version }}
+      distribution: ${{ github.event.inputs.distribution }}
     secrets:
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
