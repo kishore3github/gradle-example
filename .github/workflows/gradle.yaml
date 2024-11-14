@@ -119,7 +119,7 @@ jobs:
       #    # tags: ${{ vars.DOCKERHUB_USERNAME }}/clockbox:latest
         
       - name: Run the application
-        run: java -jar build/libs/gradle-example-all.jar
+        run: docker run -p 8080:80 gradle-example-app
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
