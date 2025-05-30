@@ -5,6 +5,23 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      language:
+        description: 'Programming Language'
+        required: true
+        default: 'java'
+      version:
+        description: 'Java Version'
+        required: true
+        default: '17'
+      distribution:
+        description: 'Java Distribution'
+        required: true
+        default: 'adopt'
+      trigger_id:
+        description: 'unique value'
+        required: true
 
 jobs:
   analyze:
