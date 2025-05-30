@@ -21,6 +21,9 @@ on:
         description: 'Java Distribution'
         required: true
         default: 'adopt'
+      trigger_id:
+        description: 'unique value'
+        required: true
 jobs:
   code_analyze:
     uses: kishore3github/github-actions/.github/workflows/code_scanning.yaml@main
